@@ -1,6 +1,6 @@
 import requests
 import random
-from api.utils.cache import cache
+from server.app.extensions import cache
 from flask import current_app as app
 
 

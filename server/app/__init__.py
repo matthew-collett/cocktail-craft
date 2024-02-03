@@ -1,10 +1,9 @@
-# api/__init__.py
+import os
 from flask import Flask
 from flask_cors import CORS
-from api.config import config
-import os
-from .main.routes import main as main_blueprint
-from .utils.cache import cache
+from server.app.config import config
+from server.app.api.routes import api as api_blueprint
+from server.app.extensions import cache
 
 
 def create_app():
@@ -15,7 +14,7 @@ def create_app():
     app.config.from_object(config_class)
 
     # register blueprints
-    app.register_blueprint(main_blueprint)
+    app.register_blueprint(api_blueprint)
 
     # configure cors
     CORS(app, resources={r"/api/*": {

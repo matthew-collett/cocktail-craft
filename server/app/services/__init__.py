@@ -1,0 +1,1 @@
+from server.app.services.cocktail_service import get_random_cocktail

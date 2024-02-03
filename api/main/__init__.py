@@ -1,4 +1,0 @@
-# api/main/__init__.py
-from flask import Blueprint
-
-main = Blueprint('main', __name__)
